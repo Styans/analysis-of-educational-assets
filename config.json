@@ -1,0 +1,7 @@
+{
+    "db": {
+        "dsn": "db.sqlite3?parseTime=true"
+    },
+    "static_dir": "./ui/static",
+    "template_dir": "./ui/templates"
+}
