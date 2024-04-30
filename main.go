@@ -9,6 +9,8 @@ import (
 	"myApp/internal/repository"
 	"myApp/internal/service"
 	"myApp/pkg/client/sqlite"
+
+	"fyne.io/fyne/v2/app"
 )
 
 func main() {
@@ -30,7 +32,10 @@ func main() {
 
 	repo := repository.NewRepository(db)
 	service := service.NewService(repo)
-	i := interface_app.NewInterfaceApp(service)
+
+	app := app.New()
+
+	i := interface_app.NewInterfaceApp(service, app)
 	starter.ShowAndRun(i)
 
 }
