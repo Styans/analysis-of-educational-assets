@@ -1,6 +1,9 @@
 package forms
 
-import "errors"
+import (
+	"errors"
+	"strconv"
+)
 
 func CheckForm(args ...interface{}) error {
 	for _, v := range args {
@@ -9,4 +12,8 @@ func CheckForm(args ...interface{}) error {
 		}
 	}
 	return nil
+}
+
+func IsInt(s string) (int, error) {
+	return strconv.Atoi(s)
 }
